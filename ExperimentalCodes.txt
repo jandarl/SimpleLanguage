@@ -1,0 +1,110 @@
+//#include <set>
+//#include <stack>
+//#include <queue>
+
+// We will create a graph of files that are "use" to help us find the correct sequence - Experimental
+/* 
+class UseFileGraph{
+    vector<string> m_file_nodes;
+    set<string> m_file_list;
+    vector<vector<bool>> m_file_matrix;
+
+    void dfs_helper(int src, vector<bool> &visited, stack<string> &files){
+        if(visited[src]){
+            return;
+        }
+        else{
+            visited[src] = true;
+            files.push(m_file_nodes[src]);
+        }
+
+        for(int _ndx(0); _ndx < m_file_matrix[src].size(); _ndx++){
+            if(m_file_matrix[src][_ndx] == true){
+                dfs_helper(_ndx, visited, files);
+            }
+        }
+    }
+
+public:
+    UseFileGraph(){
+        m_file_nodes.clear();
+        m_file_list.clear();
+        m_file_matrix.clear();
+    }
+
+    ~UseFileGraph(){
+        m_file_nodes.clear();
+        m_file_list.clear();
+        m_file_matrix.clear();
+    }
+
+    int AddNode(string file){
+        m_file_nodes.push_back(file);
+        m_file_list.insert(file);
+        m_file_matrix.resize(m_file_nodes.size(), vector<bool>(m_file_nodes.size(), false));
+        return m_file_nodes.size() - 1;
+    }
+
+    // Use this to let the class handle the node index
+    bool AddEdge(string src, string dest){
+        int _src_ndx = -1;
+        int _dest_ndx = -1;
+
+        for(int _ndx(0); _ndx < m_file_nodes.size(); _ndx++){
+            if(m_file_nodes[_ndx] == src){
+                _src_ndx = _ndx;
+            }
+            else if (m_file_nodes[_ndx] == dest){
+                _dest_ndx = _ndx;
+            }
+        }
+
+        if(_src_ndx != -1 && _dest_ndx != -1){
+            AddEdge(_src_ndx,_dest_ndx);
+            return true;
+        }
+
+        return false;
+    }
+
+    // Use this if the you wish to handle the index of nodes outside this class
+    void AddEdge(int src, int dest){
+        m_file_matrix[src][dest] = true;
+    }
+
+    bool IsNodePresent(string file){
+        return m_file_list.find(file) != m_file_list.end() ? true : false;
+    }
+
+    // We are using dfs and stack to make sure we first compile the deepest layer files before compiling the next layer of files -Experimental
+    int GetCompileStackDFS(stack<string> &files){
+        vector<bool> _visited;
+        _visited.clear();
+        dfs_helper(0, _visited, files);
+        return files.size();
+    }
+
+     // We are using bfs and stack to make sure we first compile the deepest layer files before compiling the next layer of files -Experimental
+    int GetCompileStackBFS(stack<string> &files){
+        queue<int> search_queue;
+        vector<bool> visited(m_file_nodes.size());
+
+        search_queue.push(0);
+        visited[0] = true;
+        
+        while(search_queue.size() != 0){
+            int src = search_queue.front();
+            search_queue.pop();       
+            files.push(m_file_nodes[src]);
+
+            for(int _ndx(0); _ndx < m_file_matrix[src].size(); _ndx++){
+                if((m_file_matrix[src][_ndx] == true) && (visited[_ndx] == false)){
+                    search_queue.push(_ndx);
+                    visited[_ndx] = true;
+                }
+            }
+        }
+    }
+};
+
+*/
