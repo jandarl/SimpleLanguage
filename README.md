@@ -40,6 +40,13 @@ Simple Programming Language:
 	p = (a, b) { print(a + b); }
 
 	let pb i = (a,b) { return a + b }	<--- Public function that can be accessed outside the file or Proto.
+
+	Arithmetics:
+		Addition:   a + b
+		Subtraction: a - b
+		Multiplication: a * b
+		Division: a / b
+		Power: a ^ b
    ```
 4) Comments:
    ```
