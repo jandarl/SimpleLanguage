@@ -12,8 +12,8 @@ Simple Programming Language:
 	UPDATES:
 
 	MAY 17, 2025 - Deprecated old codes. Experimental Codes created during the process was also dumped into the deprecated codes.
-				 - Started using the Tree-Walk method as a test in creating a compiler.
-				 - Added Arithmetic in the functions
+		     - Started using the Tree-Walk method as a test in creating a compiler.
+		     - Added Arithmetic in the functions
 
  1) Declaring a variable:
     ```
