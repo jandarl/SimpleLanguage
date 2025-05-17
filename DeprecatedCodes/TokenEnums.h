@@ -1,5 +1,5 @@
 
-enum CHARACTER_TOKENS{
+enum SYMBOL_TOKENS{
     NUL = 0x00,             // NULL character, end of something
     TAB = 0x0B,             // Tabbed whitespaces
     LF = 0x0A,              // New Line
@@ -25,7 +25,7 @@ enum CHARACTER_TOKENS{
     GTHAN = 0x3E,           // Greater than for conditional operations
     LBRAK = 0x5B,          // Left Bracket for used Simple Data Structures
     RBRAK = 0x5D,          // Right Bracket for used Simple Data Structures
-    POW = 0x5E,            // Caret - circumflex used for equating to the power operations
+    CARET = 0x5E,            // Caret - circumflex used for equating to the power operations
     LBRAC = 0x7B,          // Left Brace for various opening declarations
     VBAR = 0x7C,           // Vertical Bar for conditional and bitwise operations
     RBRAC = 0x7C           // Rgith Brace for closing opened declarations
@@ -75,5 +75,38 @@ enum WORD_TOKENS{
     USE,                   // include a file to access its contents in the current file
     MAIN,                  // main entry point
 
-    SPLCE,                 // End of Special Command Tokens
+    SPLCE                 // End of Special Command Tokens
+};
+
+enum TOKEN_GROUP{
+    SYMBOL_TOKENS,         // Token belongs to the symbol tokens
+    ALPHANUM_TOKEN,        // Token belongs to the alphabet or numbers
+    WORD_TOKEN             // Token is a reserved word
+};
+
+enum TOKEN_TYPE{
+    // Identification
+    IDENTIFIER,            // Name given to variable, functions or any simple or user defined data types
+    FN_OPEN,               // Function Arguement Open Parenthesis
+    FN_CLOSE,              // Function Arguement Close Parenthesis
+    IMPL_OPEN,             // Implementation Open Curly
+    IMPL_CLOSE,            // Implementation Close Curly
+    DS_OPEN,               // Data Structure Open Bracket
+    DS_CLOSE,              // Data Structure Close Bracket
+
+    // Value
+    CHAR_LITERAL,          // Fixed character value
+    STRING_LITERAL,        // Fixed string value
+    NUMBER_LITERAL,        // Fixed number value
+    FLOAT_LITERAL,         // Fixed float value
+
+    // Arithmetic Operation
+    ADD,                   // Addition Operation
+    MINUS,                 // Substraction Operation
+    MULTIPLY,              // Multiplication Operation
+    DIVIDE,                // Division Operation
+    MODULO,                // Modulo Operation
+    O_PAREN,               // Arithmetic grouping Open Parenthesis
+    C_PAREN,               // Arithmetic grouping Close Parenthesis
+    POWER,                 // Declared an exponent
 };

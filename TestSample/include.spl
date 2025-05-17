@@ -1,0 +1,87 @@
+
+/*
+    This is a sample file to be "use" on the main.spl
+*/
+
+/* Variable and Functions */
+
+let local_string = "Hello";
+let local_int = 5;
+let local_float = 3.0;
+
+let local_add = (a, b){
+    return a + b;
+}
+
+local_concat = (string){
+    local_string = local_string + string;
+}
+
+let pb external_add = (a){
+    return local_add(a, local_int);
+}
+
+let pb external_concat = (string){
+    local_concat(string);
+    return local_string;
+}
+
+pb change_float = (float){
+    local_float = float;
+}
+
+let pb get_float = () [
+    return local_float;
+]
+
+/* Control Flows */
+
+let pb try_ifelse = (arg){
+
+    if arg == 0 {
+        return "zero";
+    }
+    elif arg == 1{
+        return "one";
+    }
+    else{
+        return "Not Binary";
+    }
+}
+
+let pb try_ifcase = (arg){
+    let retval = "";
+
+    if arg {
+        0: {
+            retval = "zero";
+            break;
+        }
+        1: {
+            retval = "one";
+        }
+        else:{
+            retval = "Not Binary";
+        }
+    }
+
+    return retval;
+}
+
+pb try_whileloop = (count){
+    let index = 0;
+
+    loop index < count {
+        index++;
+    }
+}
+
+pb try_forloop = (count){
+    let y = 0;
+
+    for x in span(0, count){
+        y += x;
+    }
+}
+
+
