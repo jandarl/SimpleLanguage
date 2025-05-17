@@ -9,6 +9,12 @@ Simple Programming Language:
 	- Currently, there is no equivalent to a library file (.lib, .dll) but hopefully it can be added in the future
 	- Current compiler will be created using C++
 
+	UPDATES:
+
+	MAY 17, 2025 - Deprecated old codes. Experimental Codes created during the process was also dumped into the deprecated codes.
+				 - Started using the Tree-Walk method as a test in creating a compiler.
+				 - Added Arithmetic in the functions
+
  1) Declaring a variable:
     ```
 	let --> declare a mutable variable
