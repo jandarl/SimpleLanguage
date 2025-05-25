@@ -180,3 +180,25 @@ static const char *TokenTypeString[] = {
     "SPCTKN_END"             // End of Special Token
 };
 
+// Check if token is a number
+bool isDigit(char c){
+    // check between 0 - 9
+    return (c > 0x2F && c < 0x3A) ? true : false;
+}
+
+bool isUpperAlpha(char c){
+    // Check between A - Z
+    return (c > 0x40 && c < 0x5B) ? true : false;
+}
+
+bool isLowerAlpha(char c){
+    // Check between a - z
+    return (c > 0x60 && c < 0x7B) ? true : false;
+}
+
+bool isAlphaNumeric(char c){
+    // 0x5F or _ is allowed as an identifier
+    if(isDigit(c) || isUpperAlpha(c) || isLowerAlpha(c) || c == 0x5F) return true;
+
+    return false;
+}

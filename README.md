@@ -15,6 +15,11 @@ Simple Programming Language:
 		     - Started using the Tree-Walk method as a test in creating a compiler.
 		     - Added Arithmetic in the functions
 
+	May 25, 2025 - Updated the Scanner and token enums section
+			 - Added Number and Alpha checking in the enums section
+			 - Added Tagging for easier debugging later
+			 - Updated scanToken function by adding token eaters, token peekers and add token.
+
  1) Declaring a variable:
     ```
 	let --> declare a mutable variable
